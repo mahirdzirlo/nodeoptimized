@@ -1,8 +1,14 @@
+# Node API optimized for large number of users
+
 docker-compose up -d to start a mongodb instance
-npm run seed (popuplate 20k users into mongoDB for querying)
+npm run seed (popuplate 20k faked users into mongoDB for querying)
 
 npm run build
 npm run start
+
+execute autocannon with loadtesting parameters ie.
+
+npx autocannon -c 2000 -d 10 -p 10 http://localhost:3000/api/users
 
 ### Benchmarking
 

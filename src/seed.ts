@@ -1,12 +1,10 @@
-// src/seed.ts
 import mongoose from "mongoose";
 import { faker } from "@faker-js/faker";
-import User from "./models/User"; // Adjust this path as necessary
+import User from "./models/User";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-// Connect to MongoDB
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI || "", {});
@@ -17,7 +15,6 @@ const connectDB = async () => {
   }
 };
 
-// Seed function to create users
 const seedUsers = async () => {
   try {
     const users = Array.from({ length: 20000 }, () => ({
@@ -33,7 +30,6 @@ const seedUsers = async () => {
   }
 };
 
-// Main function
 const main = async () => {
   await connectDB();
   await seedUsers();

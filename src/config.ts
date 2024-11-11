@@ -7,7 +7,7 @@ export const connectDB = async () => {
   try {
     console.log("process.env.MONGODB_URI", process.env.MONGODB_URI);
     await mongoose.connect(process.env.MONGODB_URI || "", {
-      maxPoolSize: 50, // Optimize the number of connections in the pool
+      maxPoolSize: 50, 
     });
     console.log("MongoDB connected successfully");
   } catch (error) {
