@@ -26,3 +26,13 @@ Redis caching layer is implemented to optimize read performance:
 docker-compose up -d
 docker-compose down -v (to remove docker images)
 docker-compose up --build -d (remove docker containers and run)
+
+
+# Clinic.js for profiling performance issues
+
+
+  npm install -g clinic
+
+  clinic doctor --autocannon [ / -c 500] -- node dist/app.js
+ node --trace-sync-io dist/app.js
+clinic flame --autocannon [ / -c 500] -- node dist/app.js

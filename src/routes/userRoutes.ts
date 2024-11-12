@@ -1,17 +1,13 @@
 import express from "express";
+import { Request, Response } from "express";
 
 import { getUsers } from "../controllers/userController";
 
 const router = express.Router();
 
-router.get("/users", async (req: express.Request, res: express.Response, next: express.NextFunction) => {
-  try {
-    await getUsers(req, res, next);
-  } catch (error) {
-    if (!res.headersSent) {
-      next(error);
-    }
-  }
+router.get("/users", async (req: Request, res: Response) => {
+    await getUsers(req, res);
 });
+
 
 export default router;
